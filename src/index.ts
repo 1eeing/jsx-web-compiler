@@ -1,4 +1,5 @@
-import Babel from '@babel/standalone';
+import * as Babel from '@babel/standalone';
+import React from 'react';
 
 /**
  *
@@ -11,7 +12,7 @@ export const compile = (input: string) => {
     .code.replace('"use strict";', '')
     .trim();
 
-  const func = new Function('return ' + code);
+  const func = new Function('React', 'return ' + code);
 
-  return func();
+  return func(React);
 };
