@@ -1,0 +1,53 @@
+{
+  "name": "jsx-web-compiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.esm.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/types/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "start": "npm run dev && cp ./lib/index.esm.js public && http-server ./public",
+    "dev": "rm -rf ./lib && rollup -c --environment DEV",
+    "build": "rm -rf ./lib && rollup -c",
+    "p": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1eeing/jsx-web-compiler.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1eeing/jsx-web-compiler/issues"
+  },
+  "homepage": "https://github.com/1eeing/jsx-web-compiler#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@types/node": "^12.12.7",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "http-server": "^14.1.1",
+    "prettier": "^2.0.0",
+    "rollup": "^2.39.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@babel/standalone": "^7.20.1"
+  },
+  "peerDependencies": {
+    "@babel/standalone": "^7.20.1"
+  }
+}
